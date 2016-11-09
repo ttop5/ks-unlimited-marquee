@@ -1,14 +1,13 @@
 {
   "name": "ks-unlimited-marquee",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "ks-unlimited-marquee React component",
-  "main": "lib/index.js",
-  "jsnext:main": "es/index.js",
-  "module": "es/index.js",
+  "main": "src/index.js",
+  "jsnext:main": "src/index.js",
+  "module": "src/index.js",
   "files": [
     "css",
-    "es",
-    "lib"
+    "src"
   ], "scripts": {
     "build": "nwb build-react-component",
     "clean": "nwb clean-module && npm clean-demo",
@@ -25,8 +24,15 @@
   },
   "author": "ttop5",
   "license": "MIT",
-  "repository": "ks-unlimited-marquee",
+  "homepage": "https://github.com/ttop5/ks-unlimited-marquee",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ttop5/ks-unlimited-marquee.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ttop5/ks-unlimited-marquee/issues"
+  },
   "keywords": [
-    "react-component"
+    "marquee"
   ]
 }
