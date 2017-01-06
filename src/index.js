@@ -7,63 +7,46 @@ class UnlimitedMarquee extends Component {
     content: PropTypes.node.isRequired,
     gap: PropTypes.number,
     speed: PropTypes.number,
-    width: PropTypes.string,
-    height: PropTypes.string,
   }
 
   static defaultProps = {
     gap: 0,
-    speed: 10,
-    width: '300px',
-    height: '300px',
-    content: (
-      <div>
-        <h1>haha</h1>
-        <h1>haha</h1>
-        <h1>haha</h1>
-        <h1>haha</h1>
-        <h1>haha</h1>
-        <h1>haha</h1>
-        <h1>haha</h1>
-        <h1>haha</h1>
-      </div>
-    )
+    speed: 20,
   }
 
   componentDidMount() {
-    const { gap, speed } = this.props;
-    const scrollContent = document.querySelector('#scrollContent');
-    const scrollDiv1 = document.querySelector('#scrollDiv1');
-    const scrollDiv2 = document.querySelector('#scrollDiv2');
+    const { speed } = this.props;
+    const wrap = this.refs.wrap;
+    const scrollDiv1 = this.refs.content1;
+    const scrollDiv2 = this.refs.content2;
+    wrap.style.height = scrollDiv1.offsetHeight + 'px';
 
     function Marquee() {
-      console.log('fuck');
-      if (scrollDiv2.offsetTop - scrollContent.scrollTop <= gap) {
-        scrollContent.scrollTop -= scrollDiv1.offsetHeight;
+      if (scrollDiv2.offsetHeight === wrap.scrollTop) {
+        wrap.scrollTop -= scrollDiv1.offsetHeight;
       }
-      scrollContent.scrollTop ++;
-      console.log(scrollContent.scrollTop);
+      wrap.scrollTop ++;
     }
 
     let MyMar = setInterval(Marquee, speed);
-    scrollContent.onmouseover = function StartScroll() {
+    wrap.onmouseover = function StartScroll() {
       clearInterval(MyMar);
     };
 
-    scrollContent.onmouseout = function StopScroll() {
+    wrap.onmouseout = function StopScroll() {
       MyMar = setInterval(Marquee, speed);
     };
   }
 
   render() {
-    const { width, height, content } = this.props;
+    const { content } = this.props;
     return (
       <div>
-        <div id='scrollContent' style={{ width, height }} className="wrap">
-          <div id='scrollDiv1'>
+        <div ref="wrap" className="wrap">
+          <div ref="content1" className="content">
             {this.props.content}
           </div>
-          <div id='scrollDiv2'>
+          <div ref="content2" className="content">
             {this.props.content}
           </div>
         </div>

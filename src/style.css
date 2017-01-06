@@ -1,3 +1,4 @@
-.wrap {
+.wrap,
+.content {
   overflow: hidden;
 }
