@@ -25,26 +25,26 @@ import UnlimitedMarquee from 'ks-unlimited-marquee';
 
 class Demo extends Component {
   render() {
-    const data = [
-      { url: 'https://github.com/ttop5/blog/issues/1', desc: '1111111111111111111111111111111111' },
-      { url: 'https://github.com/ttop5/blog/issues/2', desc: '2222222222222222222222222222222222' },
-      { url: 'https://github.com/ttop5/blog/issues/3', desc: '3333333333333333333333333333333333' },
-      { url: 'https://github.com/ttop5/blog/issues/4', desc: '4444444444444444444444444444444444' },
-      { url: 'https://github.com/ttop5/blog/issues/5', desc: '5555555555555555555555555555555555' },
-      { url: 'https://github.com/ttop5/blog/issues/6', desc: '6666666666666666666666666666666666' },
-      { url: 'https://github.com/ttop5/blog/issues/7', desc: '7777777777777777777777777777777777' },
-      { url: 'https://github.com/ttop5/blog/issues/8', desc: '8888888888888888888888888888888888' },
-      { url: 'https://github.com/ttop5/blog/issues/9', desc: '9999999999999999999999999999999999' },
-    ];
-    const height = '120px';
-    const width = '250px';
 
     return (
+      const content = (
+        <ul>
+          <li>新闻1</li>
+          <li>新闻2</li>
+          <li>新闻3</li>
+          <li>新闻4</li>
+          <li>新闻5</li>
+          <li>新闻6</li>
+          <li>新闻7</li>
+          <li>新闻8</li>
+          <li>新闻9</li>
+          <li>新闻10</li>
+          <li>新闻11</li>
+        </ul>
+      );
       <div>
         <UnlimitedMarquee
-          data={data}
-          height={height}
-          width={width}
+          content={content}
         />
       </div>
     )
@@ -54,7 +54,6 @@ class Demo extends Component {
 render(<Demo/>, document.querySelector('#demo'));
 ```
 
-
 ## Example
 
 [https://ttop5.github.io/ks-unlimited-marquee/demo/dist](https://ttop5.github.io/ks-unlimited-marquee/demo/dist)
@@ -62,13 +61,10 @@ render(<Demo/>, document.querySelector('#demo'));
 
 ## API
 
-| Name | Type | Default | Description |
-| :----:  | :----:  | :----:  | :----: |
-| data | Object[] |  | It is `necessary` data. Data structure: `[{url: '', desc: ''}...]` |
-| height | String | 100px | scrollBox's height |
-| width | String | 200px | scrollBox's width |
-| gap | Number | 0 | Totop gap. If the component is not scrolling as you would expect, try to ajust it. |
-| speed | Number | 100 | scrolling speed, `0 < speed <= 1000` |
+| Name | Type | Default | Description | isRequired|
+| :----:  | :----:  | :----:  | :----: | :----: |
+| speed | Number | 20 | scrolling speed, `0 < speed <= 1000` | false |
+| content | element |  | element | true |
 
 
 ## Development
