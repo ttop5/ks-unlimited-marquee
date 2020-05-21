@@ -44,10 +44,10 @@ class UnlimitedMarquee extends Component {
       <div>
         <div ref="wrap" className="wrap">
           <div ref="content1" className="content">
-            {this.props.content}
+            {content}
           </div>
           <div ref="content2" className="content">
-            {this.props.content}
+            {content}
           </div>
         </div>
       </div>
