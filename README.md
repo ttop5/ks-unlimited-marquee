@@ -13,14 +13,14 @@ A unidirectional scrollable React component.
 ## Install
 
 ```zsh
-npm install ks-unlimited-marquee
+npm install @ttop5/ks-unlimited-marquee
 ```
 
 
 ## Usage
 
 ```javascript
-import UnlimitedMarquee from 'ks-unlimited-marquee';
+import UnlimitedMarquee from '@ttop5/ks-unlimited-marquee';
 
 
 class Demo extends Component {

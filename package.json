@@ -1,5 +1,5 @@
 {
-  "name": "ks-unlimited-marquee",
+  "name": "@ttop5/ks-unlimited-marquee",
   "version": "1.0.5",
   "description": "ks-unlimited-marquee React component",
   "main": "src/index.js",
@@ -8,7 +8,8 @@
   "files": [
     "css",
     "src"
-  ], "scripts": {
+  ],
+  "scripts": {
     "build": "nwb build-react-component",
     "clean": "nwb clean-module && npm clean-demo",
     "start": "nwb serve-react-demo"
@@ -34,5 +35,8 @@
   },
   "keywords": [
     "marquee"
-  ]
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
 }
